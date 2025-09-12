@@ -155,36 +155,37 @@ State *FullState::peek(Stack *stk) {
 
 // ----------------- Main -----------------
 int main() {
-    Stack stk(3);              // Stack with capacity 3
-    stk.pop();                 // Should indicate stack is empty
-    stk.peek();                // Should indicate stack is empty
-    stk.getCurrentStateName(); // Should be EmptyState
+    Stack stk(3);                              // Stack with capacity 3
+    stk.pop();                                 // Should indicate stack is empty
+    stk.peek();                                // Should indicate stack is empty
+    cout << stk.getCurrentStateName() << endl; // Should be EmptyState
 
     stk.push(10);
-    stk.getCurrentStateName(); // Should be PartialState
+    cout << stk.getCurrentStateName() << endl; // Should be PartialState
 
     stk.push(20);
-    stk.getCurrentStateName(); // Should be PartialState
+    cout << stk.getCurrentStateName() << endl; // Should be PartialState
 
-    stk.peek();                // Should show top element 20
-    stk.push(30);              // Stack is now full
-    stk.getCurrentStateName(); // Should be FullState
+    stk.peek();                                // Should show top element 20
+    stk.push(30);                              // Stack is now full
+    cout << stk.getCurrentStateName() << endl; // Should be FullState
 
-    stk.push(40);              // Should indicate stack is full
-    stk.getCurrentStateName(); // Should be FullState
+    stk.push(40);                              // Should indicate stack is full
+    cout << stk.getCurrentStateName() << endl; // Should be FullState
 
-    stk.pop();                 // Should pop 30
-    stk.getCurrentStateName(); // Should be PartialState
-    stk.peek();                // Should show top element 20
+    stk.pop();                                 // Should pop 30
+    cout << stk.getCurrentStateName() << endl; // Should be PartialState
+    stk.peek();                                // Should show top element 20
 
-    stk.pop();                 // Should pop 20
-    stk.getCurrentStateName(); // Should be PartialState
+    stk.pop();                                 // Should pop 20
+    cout << stk.getCurrentStateName() << endl; // Should be PartialState
 
-    stk.pop();                 // Should pop 10 and stack becomes empty
-    stk.getCurrentStateName(); // Should be PartialState
+    stk.pop(); // Should pop 10 and stack becomes empty
+    cout << stk.getCurrentStateName() << endl; // Should be PartialState
 
-    stk.pop();                 // Should indicate stack is empty
-    stk.getCurrentStateName(); // Should be EmptyState
+    stk.pop();                                 // Should indicate stack is empty
+    cout << stk.getCurrentStateName() << endl; // Should be EmptyState
 
+    delete &stk; // Clean up
     return 0;
 }
