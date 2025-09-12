@@ -6,7 +6,7 @@ using namespace std;
 // ---------------------------------------------
 class ModelTrainer {
   public:
-    // THe template medho - final so subclasses can't changethe sequence
+    // The template medho - final so subclasses can't changethe sequence
     void trainPipeline(const string &dataPath) {
         loadData(dataPath);
         preprocessData();

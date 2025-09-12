@@ -186,6 +186,5 @@ int main() {
     stk.pop();                                 // Should indicate stack is empty
     cout << stk.getCurrentStateName() << endl; // Should be EmptyState
 
-    delete &stk; // Clean up
     return 0;
 }
